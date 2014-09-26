@@ -28,7 +28,9 @@ public class Test {
         System.out.println(p.matcher("a").find());
         System.out.println(p.matcher("4").find());
         System.out.println(p.matcher("0").find());
-
+        String s2="123";
+        s2+=5;
+        System.out.println(s2);
         for (int i=0;i<100;i++)      {
             long a = System.currentTimeMillis();
             //System.out.println(getNowDate());
