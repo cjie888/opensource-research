@@ -10,8 +10,8 @@ import java.text.SimpleDateFormat;
 
 public class SDFThreadsafeThreadLocalDemo {
 
-    private final static ThreadLocal threadLocal = new ThreadLocal() {
-        protected Object initialValue() {
+    private final static ThreadLocal<SimpleDateFormat> threadLocal = new ThreadLocal<SimpleDateFormat>() {
+        protected SimpleDateFormat initialValue() {
             return new SimpleDateFormat("dd-MM-yyyy");
         };
     };
@@ -34,7 +34,7 @@ public class SDFThreadsafeThreadLocalDemo {
         public void run() {
             for (String strDate : stringDates) {
                 try {
-                    SimpleDateFormat sdf = (SimpleDateFormat) threadLocal.get();
+                    SimpleDateFormat sdf = threadLocal.get();
                     System.out.println(sdf.parse(strDate));
                 } catch (ParseException e) {
                     e.printStackTrace();
