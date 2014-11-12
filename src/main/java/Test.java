@@ -37,5 +37,41 @@ public class Test {
             getNowDate();
             System.out.println(System.currentTimeMillis() -a);
         }
+
+        int b=5;
+        int c = 1;
+        int d = 2;
+        b=c+=d+=b+++b;  //d=2+5+6 = 13  c=1+13 b = c=14
+        d+=b; //d=27
+
+        int expr = -2 >> 5;
+        System.out.println("exp:"+expr);
+    }
+}
+
+abstract class Actor {
+    abstract void draw();
+    Actor() {
+        System.out.println("Actor() before draw()");
+        draw();
+        System.out.println("Actor() after draw()");
+    }
+}
+
+class Hero extends Actor {
+    int hp = 1;
+    Hero(int i) {
+        hp = i;
+        System.out.println("Hero.Hero(), hp = " + hp);
+    }
+    void draw() {
+        System.out.println("Hero.draw(), hp = " + hp);
+    }
+}
+
+class PolyConstructors {
+   //父类静态块 --> 然后是子类静态块 --> 父类自由块 --> 父类构造函数块 --> 子类自由块 --> 子类构造函数块
+    public static void main(String[] args) {
+        new Hero(5);
     }
 }
