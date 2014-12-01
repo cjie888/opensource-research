@@ -1,3 +1,7 @@
+import org.jruby.RubyProcess;
+
+import java.sql.Time;
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.regex.Pattern;
@@ -20,6 +24,9 @@ public class Test {
         return sysDatetime;
     }
     public static void main(String[] args) {
+
+        Timestamp t1 = new Timestamp(System.currentTimeMillis() -3600000);
+        System.out.println(t1.after(new Timestamp(System.currentTimeMillis())));
         String s="sadf的说法发阿萨德";
         for(int i=0;i<s.length();i++)      {
             System.out.print(s.charAt(i)+" ");
