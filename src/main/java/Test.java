@@ -25,6 +25,8 @@ public class Test {
     }
     public static void main(String[] args) {
 
+        Double abc = null;
+        //System.out.println(0.0!=abc); NullPointException
         Timestamp t1 = new Timestamp(System.currentTimeMillis() -3600000);
         System.out.println(t1.after(new Timestamp(System.currentTimeMillis())));
         String s="sadf的说法发阿萨德";
