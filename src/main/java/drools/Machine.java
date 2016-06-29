@@ -8,6 +8,7 @@ import java.util.List;
 
 public class Machine {
 
+
 	private String type;
 
 	private List functions = new ArrayList();
