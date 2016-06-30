@@ -33,7 +33,6 @@
             <groupId>org.antlr</groupId>
             <artifactId>antlr-runtime</artifactId>
             <version>3.4</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.directory.mina</groupId>
@@ -245,6 +244,16 @@
             <artifactId>drools-compiler</artifactId>
             <version>5.5.0.Final</version>
         </dependency>
+        <dependency>
+            <groupId>org.drools</groupId>
+            <artifactId>drools-decisiontables</artifactId>
+            <version>5.5.0.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.janino</groupId>
+            <artifactId>janino</artifactId>
+            <version>2.5.16</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -420,6 +429,7 @@
                         <nonFilteredFileExtension>json</nonFilteredFileExtension>
                         <nonFilteredFileExtension>der</nonFilteredFileExtension>
                         <nonFilteredFileExtension>pem</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>drl</nonFilteredFileExtension>
                     </nonFilteredFileExtensions>
                 </configuration>
             </plugin>

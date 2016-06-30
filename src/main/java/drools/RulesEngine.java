@@ -2,11 +2,17 @@ package drools;
 
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.util.Properties;
 
 import org.drools.RuleBase;
+import org.drools.RuleBaseConfiguration;
 import org.drools.RuleBaseFactory;
 import org.drools.WorkingMemory;
+import org.drools.builder.KnowledgeBuilder;
+import org.drools.builder.KnowledgeBuilderConfiguration;
+import org.drools.builder.KnowledgeBuilderFactory;
 import org.drools.compiler.PackageBuilder;
+import org.drools.compiler.PackageBuilderConfiguration;
 import org.drools.event.DebugWorkingMemoryEventListener;
 import org.drools.rule.Package;
 
@@ -19,12 +25,14 @@ public class RulesEngine {
 	public RulesEngine(String rulesFile) throws RulesEngineException {
 		super();
 		try {
-			// Read in the rules source file
+            Properties props = new Properties();
+            props.setProperty("drools.dialect.java.compiler", "JANINO");
+            // Read in the rules source file
 			Reader source = new InputStreamReader(RulesEngine.class
 					.getResourceAsStream("/" + rulesFile));
-
-			// Use package builder to build up a rule package
-			PackageBuilder builder = new PackageBuilder();
+            PackageBuilderConfiguration packageBuilderConfiguration = new PackageBuilderConfiguration(props);
+			// Use package builder to build up a rule package；
+			PackageBuilder builder = new PackageBuilder(packageBuilderConfiguration);
 
 			// This will parse and compile in one step
 			builder.addPackageFromDrl(source);
@@ -33,7 +41,7 @@ public class RulesEngine {
 			Package pkg = builder.getPackage();
 
 			// Add the package to a rulebase (deploy the rule package).
-			rules = RuleBaseFactory.newRuleBase();
+            rules = RuleBaseFactory.newRuleBase();
 			rules.addPackage(pkg);
 
 		} catch (Exception e) {
