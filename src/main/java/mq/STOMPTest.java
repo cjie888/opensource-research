@@ -10,7 +10,7 @@ import org.apache.activemq.transport.stomp.StompConnection;
 import com.mongodb.util.JSON;
 
 /**
- * @description 胡成杰(chengjiehu@creditease.cn)
+ * @description 胡成杰
  * 2016/7/24 10:01
  */
 public class STOMPTest {

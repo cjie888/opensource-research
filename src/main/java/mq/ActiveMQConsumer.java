@@ -13,7 +13,7 @@ import javax.jms.TextMessage;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
 /**
- * @description 胡成杰(chengjiehu@creditease.cn)
+ * @description 胡成杰
  * 2016/7/24 10:20
  */
 public class ActiveMQConsumer {
