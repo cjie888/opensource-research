@@ -259,6 +259,17 @@
             <artifactId>activemq-all</artifactId>
             <version>5.13.3</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.qpid</groupId>
+            <artifactId>proton-jms</artifactId>
+            <version>0.12.2</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.alibaba.rocketmq/rocketmq-client -->
+        <dependency>
+            <groupId>com.alibaba.rocketmq</groupId>
+            <artifactId>rocketmq-client</artifactId>
+            <version>3.4.6</version>
+        </dependency>
     </dependencies>
 
     <build>
