@@ -58,7 +58,7 @@ public class PushConsumer {
                     // 执行TopicTest1的消费逻辑
                     if (msg.getTags() != null && msg.getTags().equals("TagA")) {
                         // 执行TagA的消费
-                        System.out.println(new String(msg.getBody())  + " "  + msg.getMsgId());
+                        System.out.println(new String(msg.getBody())  + " "  + msg.getMsgId()  + " " + msg.getQueueOffset());
                     } else if (msg.getTags() != null
                             && msg.getTags().equals("TagC")) {
                         // 执行TagC的消费
@@ -67,7 +67,7 @@ public class PushConsumer {
                         // 执行TagD的消费
                     }
                 } else if (msg.getTopic().equals("TopicTest2")) {
-                    System.out.println(new String(msg.getBody()) + " " + msg.getMsgId());
+                    System.out.println(new String(msg.getBody()) + " " + msg.getMsgId() + " " + msg.getQueueOffset());
                 }
 
                 return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
