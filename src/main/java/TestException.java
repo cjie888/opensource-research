@@ -55,7 +55,7 @@ public class TestException {
             throw e;
         } finally {
             System.out.println("testEx2, finally; return value=" + ret);
-            return ret;
+            return ret;//导致该方法不会抛出异常
         }
     }
 
