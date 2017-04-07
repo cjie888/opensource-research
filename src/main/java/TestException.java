@@ -6,6 +6,18 @@ public class TestException {
     public TestException() {
     }
 
+    void testEx22() {
+        try {
+            System.out.println("try block");
+            throw new Exception();
+        } catch (Exception e) {
+            System.out.println("exit block");
+            System.exit(0);
+        } finally {
+            System.out.println("finally block");
+        }
+    }
+
     boolean testEx() throws Exception {
         boolean ret = true;
         try {
@@ -62,7 +74,8 @@ public class TestException {
     public static void main(String[] args) {
         TestException testException1 = new TestException();
         try {
-            testException1.testEx();
+            //testException1.testEx();
+            testException1.testEx22();
         } catch (Exception e) {
             e.printStackTrace();
         }
