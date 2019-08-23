@@ -2,7 +2,7 @@ package pulsar;
 
 import org.apache.pulsar.client.api.*;
 
-public class PulsarConsumerTest {
+public class PulsarConsumer2Test {
 
     public static void main(String[] args) throws PulsarClientException {
         PulsarClient client = PulsarClient.builder()
