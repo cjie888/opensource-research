@@ -29,12 +29,6 @@
             <artifactId>junit</artifactId>
             <version>4.8.2</version>
         </dependency>
-
-        <dependency>
-            <groupId>org.antlr</groupId>
-            <artifactId>antlr-runtime</artifactId>
-            <version>3.4</version>
-        </dependency>
         <dependency>
             <groupId>org.apache.directory.mina</groupId>
             <artifactId>mina-core</artifactId>
@@ -309,6 +303,11 @@
         <dependency>
             <groupId>org.antlr</groupId>
             <artifactId>antlr4-runtime</artifactId>
+            <version>4.7.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.antlr</groupId>
+            <artifactId>antlr4</artifactId>
             <version>4.7.1</version>
         </dependency>
     </dependencies>
